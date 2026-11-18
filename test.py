@@ -1,6 +1,7 @@
 import pandas as pd
 from eda import get_size, extract_features
 
+
 def test_get_size():
     """
     Tests whether get_size returns correct dimensions.
@@ -11,6 +12,8 @@ def test_get_size():
     })
 
     assert get_size(data) == (3, 2)
+
+
 def test_extract_features():
     """
     Tests feature extraction using known measurements.
@@ -30,6 +33,7 @@ def test_extract_features():
     assert result.loc[1, "PS1_mean"] == 10
     assert result.loc[1, "PS1_std"] == 0
     assert result.loc[1, "PS1_max"] == 10
+
 
 def main():
     test_get_size()

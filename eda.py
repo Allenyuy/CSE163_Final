@@ -2,7 +2,6 @@ import pandas as pd
 import plotly.express as px
 
 
-
 def main():
     pressure = pd.read_csv("PS1.txt", sep="\t", header=None)
     flow = pd.read_csv("FS1.txt", sep="\t", header=None)
@@ -38,7 +37,6 @@ def main():
     print(features.head())
     print(features.shape)
 
-    
     print("feature.shape:", features.shape)
 
     valve = pd.DataFrame({
@@ -59,10 +57,13 @@ def main():
     plot_pressure(features)
     plot_flow(features)
     plot_temperature(features)
+
+
 # get the size of the files
 def get_size(data):
     """Return the number of rows and columns in the dataset."""
     return data.shape
+
 
 def extract_features(data, sensor_name):
     """
@@ -76,6 +77,7 @@ def extract_features(data, sensor_name):
     })
 
     return features
+
 
 def plot_valve_distribution(features):
     """
@@ -96,6 +98,7 @@ def plot_valve_distribution(features):
 
     fig.write_image("valve_distribution.png")
     fig.show()
+
 
 def plot_pressure(features):
     """
@@ -137,6 +140,7 @@ def plot_flow(features):
     fig.update_xaxes(type="category")
     fig.write_image("flow_boxplot.png")
     fig.show()
+
 
 def plot_temperature(features):
     """
